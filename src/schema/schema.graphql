@@ -1,0 +1,18 @@
+  """ Información de Usuario """
+  type Token {
+    token: String!
+  }
+
+  type User {
+      username: String
+      password: String
+  }
+
+  """ Mutations  """
+  type Mutation {
+    auth(user: String!, password: String!): Token
+  }
+
+  type Query {
+      getUser: User
+  }

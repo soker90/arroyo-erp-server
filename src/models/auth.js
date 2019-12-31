@@ -5,4 +5,4 @@ const authSchema = new Schema({
   password: String,
 });
 
-export const authModel = model('auth', authSchema);
+export const AuthModel = model('auth', authSchema);

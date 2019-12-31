@@ -1,11 +1,16 @@
 'use strict';
 import express from 'express';
-
 import {ApolloServer} from 'apollo-server-express';
-import {typeDefs} from './data/schema';
-import {resolvers} from './data/resolvers';
+import {typeDefs} from 'schema';
+import {resolvers} from 'resolvers';
+import {connectDB} from 'utils/connectDB';
 
+require('dotenv').config({path: __dirname + '/config/.env'});
 const app = express();
+
+//Connect to Mongodb
+connectDB();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
