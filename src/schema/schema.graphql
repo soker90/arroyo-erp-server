@@ -8,9 +8,14 @@
       password: String
   }
 
+  type Message {
+      message: String
+  }
+
   """ Mutations  """
   type Mutation {
     auth(user: String!, password: String!): Token
+    createUser(username: String!, password: String!): Message
   }
 
   type Query {
