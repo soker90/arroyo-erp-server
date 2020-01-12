@@ -1,12 +1,12 @@
 import {Schema, model} from 'mongoose';
 import bcrypt from 'bcrypt';
 
-const authSchema = new Schema({
-  username: String,
+const usersSchema = new Schema({
+  user: String,
   password: String,
 });
 
-authSchema.pre('save', next => {
+usersSchema.pre('save', function (next) {
   if (!this.isModified('password')) {
     return next();
   }
@@ -21,4 +21,4 @@ authSchema.pre('save', next => {
   })
 });
 
-export const AuthModel = model('auth', authSchema);
+export const UsersModel = model('Users', usersSchema);
