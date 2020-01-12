@@ -8,7 +8,6 @@ import {UsersModel} from 'models';
  * @returns {String}
  */
 export const createUser = async (_, {user, password}) => {
-  console.log('ddd');
   let userExist = await UsersModel.findOne({user});
 
   if (userExist) {

@@ -1,25 +1,16 @@
-import {createToken} from '../../utils/createToken';
+import {createToken} from 'modules/Auth/utils/createToken';
 import {UsersModel} from 'models';
 import {compare} from 'bcrypt';
 
-export const createUser = async (root, {user, password}) => {
-  console.log('ddd');
-  let userExist = await UsersModel.findOne({user});
-
-  if (userExist) {
-    throw new Error('El usuario ya existe');
-  }
-
-  const newUser = await new UsersModel({
-    user,
-    password,
-  }).save();
-
-  console.log(newUser);
-
-  return 'Usuario creado correctamente';
-};
-
+/**
+ * Acutenticación de usuarios
+ * Si es correcta la combinacion de usuario y contraseña
+ * devuelve un token
+ * @param _
+ * @param {String} user
+ * @param {String} password
+ * @returns {Promise<{token: (undefined|*)}>}
+ */
 export const auth = async (_, {user, password}) => {
   const username = await UsersModel.findOne({user});
 
