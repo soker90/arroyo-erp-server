@@ -1,11 +1,7 @@
-  """ Información de Usuario """
+# import User from "user.graphql"
+""" Información de Usuario """
   type Token {
     token: String!
-  }
-
-  type User {
-      user: String
-      password: String
   }
 
   """ Mutations  """

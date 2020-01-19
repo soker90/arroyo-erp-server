@@ -17,4 +17,4 @@ export const verifyToken = async ({req}) => {
       console.error('Error al verificar el token', error);
     }
   }
-}
+};

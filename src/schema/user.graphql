@@ -1,0 +1,5 @@
+  """ Usuario del sistema """
+  type User {
+      user: String
+      password: String
+  }
