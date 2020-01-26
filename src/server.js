@@ -11,12 +11,17 @@ const app = express();
 //Connect to Mongodb
 connectDB();
 
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: verifyToken,
 });
 
-server.applyMiddleware({app});
+server.applyMiddleware({app,
+  cors: {
+    credentials: true,
+    origin: true
+  },});
 
-app.listen({port: 3000}, () => console.log(`Servidor corriendo por  [ http://localhost:3000${server.graphqlPath} ]`));
+app.listen({port: 8000}, () => console.log(`Servidor corriendo por  [ http://localhost:3000${server.graphqlPath} ]`));
