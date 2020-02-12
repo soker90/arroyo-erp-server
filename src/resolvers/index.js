@@ -1,12 +1,9 @@
 import AuthMutations from 'modules/Auth/resolvers/mutations';
-import {UsersModel} from '../models';
+import providersQueries from './providers/queries'
 
 export const resolvers = {
   Query: {
-    // No se usa getUser, ni sirve
-    getUser: (_) => {
-      return UsersModel.findOne({user: 'dd'});
-    },
+    ...providersQueries,
   },
   Mutation: {
     ...AuthMutations,

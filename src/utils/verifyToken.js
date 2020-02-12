@@ -8,7 +8,7 @@ export const verifyToken = async ({req}) => {
     try {
       const currentUser = await verify(token, process.env.SECRECT);
       req.currentUser = currentUser;
-      console.log('currentUser', currentUser);
+      // console.log('currentUser', currentUser.user);
 
       return {
         currentUser,
