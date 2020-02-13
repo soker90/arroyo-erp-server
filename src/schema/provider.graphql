@@ -6,3 +6,11 @@
       phone: String
       email: String
   }
+
+type ProviderInput {
+      _id: ID
+      name: String
+      address: String
+      phone: String
+      email: String
+  }
