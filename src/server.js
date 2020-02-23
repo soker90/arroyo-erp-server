@@ -24,4 +24,4 @@ server.applyMiddleware({app,
     origin: true
   },});
 
-app.listen({port: 8000}, () => console.log(`Servidor corriendo por  [ http://localhost:3000${server.graphqlPath} ]`));
+app.listen({port: 8000}, () => console.log(`Servidor corriendo por  [ http://localhost:8000${server.graphqlPath} ]`));
