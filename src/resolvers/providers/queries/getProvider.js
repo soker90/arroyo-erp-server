@@ -6,6 +6,10 @@ import {ProvidersModel} from '../../../models';
  * @param {Object} request
  * @returns {Promise<*>}
  */
-export const getProvider = async (_, request) => {
-  return await ProvidersModel.findOne(request);
+export const getProvider = async (_, {id, name}) => {
+  const filter = {
+    ...(id && {_id: id}),
+    ...(name && {name}),
+  };
+  return await ProvidersModel.findOne(filter);
 };
