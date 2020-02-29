@@ -1,0 +1,14 @@
+  """ Productor """
+  type Product {
+      _id: ID
+      name: String
+      updateDate: String
+  }
+
+input ProductInput {
+      _id: ID
+      name: String
+      provider: ID
+      updateDate: String
+
+  }

@@ -1,13 +1,15 @@
 import AuthMutations from 'modules/Auth/resolvers/mutations';
 import providersQueries from './providers/queries'
-import providerQueries from './provider/queries'
+import providersMutations from './providers/mutations';
+import productsQueries from './products/queries';
 
 export const resolvers = {
   Query: {
     ...providersQueries,
-    ...providerQueries,
+    ...productsQueries,
   },
   Mutation: {
     ...AuthMutations,
+    ...providersMutations,
   },
 };
