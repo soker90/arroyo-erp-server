@@ -1,5 +1,6 @@
 # import User from "user.graphql"
 # import Provider from "provider.graphql"
+# import Product from "product.graphql"
 """ Información de Usuario """
   type Token {
     token: String!
@@ -9,10 +10,12 @@
   type Mutation {
     auth(user: String!, password: String!): Token
     createUser(user: String!, password: String!): String
+    editProvider(input: ProviderInput): Provider
   }
 
   """ Queries """
   type Query {
       getProviders: [Provider]
       getProvider(id: String, name: String): Provider
+      getProducts(provider: String): [Product]
   }
