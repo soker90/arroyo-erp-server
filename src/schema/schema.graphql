@@ -14,5 +14,5 @@
   """ Queries """
   type Query {
       getProviders: [Provider]
-      getProvider(_id: String, name: String): Provider
+      getProvider(id: String, name: String): Provider
   }

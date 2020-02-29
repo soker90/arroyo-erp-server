@@ -19,6 +19,7 @@ export const verifyToken = async ({req}) => {
       throw new AuthenticationError('Acceso denegado');
     }
   } else {
-    // throw new AuthenticationError('Acceso denegado');
+    if (!/login/.test(req.headers.referer))
+      throw new AuthenticationError('Acceso denegado');
   }
 };

@@ -7,6 +7,6 @@ import {ProvidersModel} from '../../../models';
  * @returns {Promise<*>}
  */
 export const getProvider = async (_, request) => {
-  console.log(request);
-  return ProvidersModel.find(request);
+  const data = {_id: request.id};
+  return ProvidersModel.findOne(data);
 };
