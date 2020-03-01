@@ -1,4 +1,4 @@
-import {ProvidersModel} from '../../../models';
+import {ProductsModel} from '../../../models';
 
 /**
  * Devuelve todos los proveedores
@@ -6,6 +6,6 @@ import {ProvidersModel} from '../../../models';
  * @param {Object} request
  * @returns {Promise<*>}
  */
-export const getProducts = async (_, request) => {
-  return ProvidersModel.find(request);
+export const getProducts = async (_, request = {}) => {
+  return ProductsModel.find(request);
 };
