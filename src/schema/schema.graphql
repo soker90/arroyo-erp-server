@@ -11,6 +11,7 @@
     auth(user: String!, password: String!): Token
     createUser(user: String!, password: String!): String
     editProvider(input: ProviderInput): Provider
+    createProduct(name: String!): String
   }
 
   """ Queries """
