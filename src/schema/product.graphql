@@ -1,14 +1,23 @@
-  """ Productor """
-  type Product {
-      _id: ID
-      name: String
-      updateDate: String
-  }
+""" Productor """
+type Product {
+    _id: ID
+    code: String
+    name: String
+    provider: String
+    amount: Float
+    updateDate: String
+}
 
 input ProductInput {
-      _id: ID
-      name: String
-      provider: ID
-      updateDate: String
+    _id: ID
+    name: String
+    provider: String
+    updateDate: String
+    amount: Float
+    code: String
+}
 
-  }
+type ProductsModified {
+    message: String
+    products: [Product]
+}

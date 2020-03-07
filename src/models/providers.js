@@ -5,7 +5,6 @@ const providersSchema = new Schema({
   address: String,
   phone: String,
   email: String,
-  _id: Types.ObjectId,
 });
 
 export const ProvidersModel = model('Providers', providersSchema);
