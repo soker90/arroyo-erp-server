@@ -8,12 +8,6 @@ import {ProductsModel} from 'models';
  */
 export const editProduct = async (_, {input}) => {
   try {
-    await new ProductsModel({
-      code,
-      name,
-      provider,
-    }).save();
-
     await new Promise(resolve => {
       ProductsModel.findOneAndUpdate({ _id: input.id }, input, { new: true }, (err, product) => {
         if (err) rejects(err);
@@ -21,9 +15,10 @@ export const editProduct = async (_, {input}) => {
       })
     });
 
-    const products = await ProductsModel.find({provider: input?.provider});
+    const products = await ProductsModel.find({provider: input.provider});
+
     return {
-      message: `El producto ${input?.name} se ha modificado correctamente.`,
+      message: `El producto ${input.name} se ha modificado correctamente.`,
       products,
     }
   } catch (error) {

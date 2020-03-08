@@ -1,13 +1,10 @@
-import {Schema, model, Types} from 'mongoose';
+import {Schema, model} from 'mongoose';
 
 const productsSchema = new Schema({
   name: String,
   provider: String,
   amount: Number,
-  updateDate: {
-    type: Date,
-    default: Date.now
-  }
+  updateDate: Date,
 });
 
 export const ProductsModel = model('Products', productsSchema);
