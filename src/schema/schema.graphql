@@ -12,6 +12,7 @@
     createUser(user: String!, password: String!): String
     editProvider(input: ProviderInput): Provider
     createProduct(code: String!, name: String!, provider: String!): ProductsModified
+    editProduct(input: ProductInput): ProductsModified
   }
 
   """ Queries """
