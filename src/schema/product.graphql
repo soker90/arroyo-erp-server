@@ -12,8 +12,6 @@ input ProductInput {
     _id: ID
     name: String
     provider: String
-    updateDate: String
-    amount: Float
     code: String
 }
 

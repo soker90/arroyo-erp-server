@@ -3,13 +3,18 @@ import {ProductsModel} from 'models';
 /**
  * Edita un producto
  * @param _ - No se usa
- * @param {String} input
+ * @param {Object} input
  * @returns {String}
  */
-export const editProduct = async (_, {input}) => {
+export const editProduct = async (_,  { input }) => {
+  const data = {
+    name: input.name,
+    code: input.code,
+  };
+
   try {
     await new Promise(resolve => {
-      ProductsModel.findOneAndUpdate({ _id: input.id }, input, { new: true }, (err, product) => {
+      ProductsModel.findOneAndUpdate({_id: input.id}, data, {new: true}, (err, product) => {
         if (err) rejects(err);
         resolve(product)
       })

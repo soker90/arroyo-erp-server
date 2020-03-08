@@ -1,4 +1,4 @@
-import {ProviderModel} from 'models';
+import {ProvidersModel} from 'models';
 
 /**
  * Crea un usuario
@@ -8,7 +8,7 @@ import {ProviderModel} from 'models';
  */
 export const editProvider = async (_, {input}) => {
   return new Promise(resolve => {
-    ProviderModel.findOneAndUpdate({ _id: input.id }, input, { new: true }, (err, provider) => {
+    ProvidersModel.findOneAndUpdate({ _id: input.id }, input, { new: true }, (err, provider) => {
       if (err) rejects(err);
       resolve(provider)
     })
