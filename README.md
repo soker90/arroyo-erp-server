@@ -27,15 +27,15 @@ Para desarrollar necesitas Node.js y un gestor de paquetes para node como npm.
 
   Si se ha instalado correctamente, deberías poder ejecutar los siguientes comandos:
 
-    $ node --version
-    v12.12.0
+      $ node --version
+      v12.12.0
 
-    $ npm --version
-    6.11.3
+      $ npm --version
+      6.11.3
 
   Si necesitas actualizar `npm`, puedes hacerlo usando `npm`:
 
-    $ npm install npm -g
+      $ npm install npm -g
 
 ---
 
