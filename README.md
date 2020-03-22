@@ -25,7 +25,7 @@ Para desarrollar necesitas Node.js y un gestor de paquetes para node como npm.
 
   Descarga Node.js del [sitio oficial](https://nodejs.org/) e instalalo.
 
-Si se ha instalado correctamente, deberías poder ejecutar los siguientes comandos:
+  Si se ha instalado correctamente, deberías poder ejecutar los siguientes comandos:
 
     $ node --version
     v12.12.0
@@ -33,7 +33,7 @@ Si se ha instalado correctamente, deberías poder ejecutar los siguientes comand
     $ npm --version
     6.11.3
 
-Si necesitas actualizar `npm`, puedes hacerlo usando `npm`:
+  Si necesitas actualizar `npm`, puedes hacerlo usando `npm`:
 
     $ npm install npm -g
 
