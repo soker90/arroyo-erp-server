@@ -1,0 +1,24 @@
+  """ Albarán """
+  type DeliveryNoteProduct {
+      product: String
+      quantity: Float
+  }
+
+  type DeliveryNote {
+      _id: ID
+      date: String
+      provider: String
+      products: [DeliveryNoteProduct]
+  }
+
+  input DeliveryNoteProductInput {
+      product: String
+      quantity: Float
+  }
+
+  input DeliveryNoteInput {
+      _id: ID
+      date: String
+      provider: String
+      products: [DeliveryNoteProductInput]
+  }
