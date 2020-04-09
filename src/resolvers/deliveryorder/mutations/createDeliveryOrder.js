@@ -9,7 +9,6 @@ import {DeliveryOrderModel} from 'models';
  * @returns {String}
  */
 export const createDeliveryOrder = async (_, {date, provider, products}) => {
-  console.log('eee')
   try {
     await new DeliveryOrderModel({
       date,

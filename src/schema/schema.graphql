@@ -1,7 +1,7 @@
 # import User from "user.graphql"
 # import Provider from "provider.graphql"
 # import Product from "product.graphql"
-# import DeliveryNote from "deliverynote.graphql"
+# import DeliveryNote from "deliveryorder.graphql"
 
 """ Información de Usuario """
   type Token {
@@ -15,7 +15,7 @@
     editProvider(input: ProviderInput): Provider
     createProduct(code: String!, name: String!, provider: String!): ProductsModified
     editProduct(input: ProductInput): ProductsModified
-    createDeliveryOrder(date: String, provider: String!, products: [DeliveryNoteProductInput]): String
+    createDeliveryOrder(date: String, provider: String!, products: [DeliveryOrderProductInput]): String
   }
 
   """ Queries """
@@ -23,4 +23,5 @@
       getProviders: [Provider]
       getProvider(id: String, name: String): Provider
       getProducts(provider: String): [Product]
+      getDeliveryOrders(provider: String): [DeliveryOrder]
   }
