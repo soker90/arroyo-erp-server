@@ -2,6 +2,11 @@
   type DeliveryOrderProduct {
       product: String
       quantity: Float
+      price: Float
+      amount: Float
+      iva: Float
+      re: Float
+      total: Float
   }
 
   type DeliveryOrder {
@@ -9,11 +14,18 @@
       date: String
       provider: String
       products: [DeliveryOrderProduct]
+      size: Int
+      total: Float
   }
 
   input DeliveryOrderProductInput {
       product: String
       quantity: Float
+      price: Float
+      amount: Float
+      iva: Float
+      re: Float
+      total: Float
   }
 
   input DeliveryOrderInput {

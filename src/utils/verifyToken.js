@@ -15,7 +15,7 @@ export const verifyToken = async ({req}) => {
         currentUser,
       }
     } catch (error) {
-      console.error('Error al verificar el token', error);
+      // console.error('Error al verificar el token', error);
       throw new AuthenticationError('Acceso denegado');
     }
   } else {

@@ -26,6 +26,6 @@ export const auth = async (_, {user, password}) => {
   }
 
   return {
-    token: createToken(username, process.env.SECRECT, '1hr'),
+    token: createToken(username, process.env.SECRECT, '18hr'),
   }
 };
