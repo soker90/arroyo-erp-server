@@ -25,7 +25,9 @@ export const auth = async (_, {user, password}) => {
     throw new Error('Contraseña incorrecta')
   }
 
+  console.log('user', username)
+
   return {
-    token: createToken(username, process.env.SECRECT, '18hr'),
+    token: createToken(username, process.env.SECRECT, '2h'),
   }
 };
