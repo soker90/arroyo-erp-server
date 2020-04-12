@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongoose';
+import {model, Schema} from 'mongoose';
 
 const productsSchema = new Schema({
   name: String,
@@ -6,6 +6,8 @@ const productsSchema = new Schema({
   provider: String,
   amount: Number,
   updateDate: Date,
+  iva: Number,
+  re: Number,
 });
 
 export const ProductsModel = model('Products', productsSchema);

@@ -10,11 +10,14 @@ export const editProduct = async (_,  { input }) => {
   const data = {
     name: input.name,
     code: input.code,
+    amount: input.amount,
+    iva: input.iva,
+    re: input.re,
   };
 
   try {
-    await new Promise(resolve => {
-      ProductsModel.findOneAndUpdate({_id: input.id}, data, {new: true}, (err, product) => {
+    const a = await new Promise(resolve => {
+      ProductsModel.findOneAndUpdate({_id: input._id}, {$set: data}, {new: true}, (err, product) => {
         if (err) rejects(err);
         resolve(product)
       })

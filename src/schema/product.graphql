@@ -6,6 +6,8 @@ type Product {
     provider: String
     amount: Float
     updateDate: String
+    iva: Float
+    re: Float
 }
 
 input ProductInput {
@@ -13,6 +15,9 @@ input ProductInput {
     name: String
     provider: String
     code: String
+    amount: Float,
+    iva: Float
+    re: Float
 }
 
 type ProductsModified {

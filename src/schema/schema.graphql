@@ -13,7 +13,7 @@
     auth(user: String!, password: String!): Token
     createUser(user: String!, password: String!): String
     editProvider(input: ProviderInput): Provider
-    createProduct(code: String!, name: String!, provider: String!): ProductsModified
+    createProduct(code: String!, name: String!, provider: String!, amount: Float, iva: Float, re: Float): ProductsModified
     editProduct(input: ProductInput): ProductsModified
     createDeliveryOrder(date: String, provider: String!, products: [DeliveryOrderProductInput]): String
   }
