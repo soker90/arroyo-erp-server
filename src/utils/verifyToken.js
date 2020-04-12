@@ -11,9 +11,11 @@ export const verifyToken = async ({req, res}) => {
       const currentUser = await verify(token, process.env.SECRECT);
       req.currentUser = currentUser;
 
-      res.set({
-        'Authorization': createToken(req.currentUser.user, process.env.SECRECT, '2h'),
-      })
+      res.set(
+        'Token', createToken(req.currentUser.user, process.env.SECRECT, '2h'),
+      );
+
+      res.set('Access-Control-Expose-Headers', '*, Token');
 
       return {
         currentUser,
