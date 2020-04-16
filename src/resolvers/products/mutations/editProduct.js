@@ -6,7 +6,7 @@ import {ProductsModel} from 'models';
  * @param {Object} input
  * @returns {String}
  */
-export const editProduct = async (_,  { input }) => {
+export const editProduct = async (_, {input}) => {
   const data = {
     name: input.name,
     code: input.code,
@@ -16,14 +16,14 @@ export const editProduct = async (_,  { input }) => {
   };
 
   try {
-    const a = await new Promise(resolve => {
+    const product = await new Promise(resolve => {
       ProductsModel.findOneAndUpdate({_id: input._id}, {$set: data}, {new: true}, (err, product) => {
         if (err) rejects(err);
         resolve(product)
       })
     });
 
-    const products = await ProductsModel.find({provider: input.provider});
+    const products = await ProductsModel.find({provider: product.provider});
 
     return {
       message: `El producto ${input.name} se ha modificado correctamente.`,
